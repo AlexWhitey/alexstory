@@ -1,3 +1,8 @@
+
+function myFunction() {
+   if (confirm("Press OK to start!")) {
+    }
+ 
  var age = prompt('First Question! How old am I?');
  console.log('my age:', age);
 
@@ -17,7 +22,7 @@
      document.getElementById('two').style.color = 'green';
  } else {
      document.getElementById('two').innerHTML = 'Thats wrong!';
-     document.getElementById('twop').style.color = 'red';
+     document.getElementById('two').style.color = 'red';
  }
 
 var countries = prompt('Third Question! How many countries do you think I have been to?');
@@ -31,7 +36,7 @@ else if (countries === '45') {
     document.getElementById('three').style.color = 'green';
  } else {
     document.getElementById('three').innerHTML = 'Thats wrong!';
-    document.getElementById('three').style.color = 'green';
+    document.getElementById('three').style.color = 'red';
 }
 
  var moto = prompt('Fourth Question! Do I drive a motorcycle?').toUpperCase();
@@ -55,7 +60,6 @@ else if (countries === '45') {
      document.getElementById('five').innerHTML ='Sadly it is, but say hello if you want to know!';
      document.getElementById('five').style.color = 'red';
  }
-
+}
  var uanswers =[age, pizza, countries, moto, last]
  var answers =[24, NO, 45, YES, YES]
- 
