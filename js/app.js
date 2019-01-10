@@ -57,27 +57,30 @@ else if (countries === '45') {
  }
 
  var last = prompt('Fifth Question! Would you like to know more?').toUpperCase();
-    console.log ('last', last);
+    console.log ('more', last);
 
  if (last === 'YES' || last === 'Y') {
      document.getElementById('five').innerHTML = 'Well then strap in!';
      document.getElementById('five').style.color = 'green';
      count++;
  } else {
-     document.getElementById('five').innerHTML ='Too bad! There is more anyway!';
+     document.getElementById('five').innerHTML ='Too bad! There is more!';
      document.getElementById('five').style.color = 'red';
  }
+
 
     var min=1; 
     var max=10;  
     var random =Math.floor(Math.random() * 10);
 
-for (var i = 0; i < 4 ; i++) {
+for (var i = 4; i > 0 ; i--) {
     var x = parseInt(prompt('Guess a number between one and ten.'));
     console.log('number guessed', x);
     if (x === random) {
         alert('That is correct')
-        // count++;
+        document.getElementById('six').innerHTML = 'Your answer: ' + x;
+        document.getElementById('six').style.color = 'green';
+         count++;
         break;
     }
     if (x > random) {
@@ -95,32 +98,20 @@ for (var i = 0; i < 4 ; i++) {
 var answ = ['apple', 'banana', 'pear', 'orange']
 
 for (var i = 6; i > 0 ; i--) {
-    var y = prompt('What kind of fruit do I like?').toLowerCase();
+    var y = prompt('What kind of fruit do I like? You have '+ i +' attempts left.').toLowerCase();
     console.log('fruit guessed', y);
 
-    if (y === answ[0]) {
-        alert('That is correct! Here are all the fruits I like: apples, bananas, pears and oranges')
+for (var c = 0; c < answ.length; c++){
+console.log('answers', answ[c]);
+    if(y === answ[c]) {
+        alert('That is correct! Here are all the fruits I like: apples, bananas, pears and oranges');
+        document.getElementById('seven').innerHTML = 'Your answer: ' + y;
+        document.getElementById('seven').style.color = 'green';
         count++;
-        break;
-    }
-    if (y === answ[1]) {
-        alert('That is correct! Here are all the fruits I like: apples, bananas, pears and oranges')
-        count++;
-        break;
-    }
-    if (y === answ[2]) {
-        alert('That is correct! Here are all the fruits I like: apples, bananas, pears and oranges')
-        count++;
-        break;
-    }
-    if (y === answ[3]) {
-        alert('That is correct! Here are all the fruits I like: apples, bananas, pears and oranges')
-        count++;
-        break;
-    }
-    else {
-        alert('Keep trying! You have ' + i + ' attempts left!')
+        i=0;
     }
 }
+}
 
-alert('You got ' + count + ' out of 7 correct!')
+
+alert('Congragts'+ name +' You got ' + count + ' out of 7 correct!')
