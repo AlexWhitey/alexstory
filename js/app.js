@@ -1,8 +1,9 @@
+'use strict';
 
-function myFunction() {
-   if (confirm("Press OK to start!")) {
-    }
- 
+var name = prompt('What is your name?');
+console.log('user name', name);
+document.getElementById('name').innerHTML = name;
+
  var age = prompt('First Question! How old am I?');
  console.log('my age:', age);
 
@@ -60,6 +61,3 @@ else if (countries === '45') {
      document.getElementById('five').innerHTML ='Sadly it is, but say hello if you want to know!';
      document.getElementById('five').style.color = 'red';
  }
-}
- var uanswers =[age, pizza, countries, moto, last]
- var answers =[24, NO, 45, YES, YES]
