@@ -3,22 +3,31 @@ var count = 0;
 
 alert('Welcome to my page! Take a little quiz about me');
 
+
 var name = prompt('What is your name?');
 console.log('user name', name);
 document.getElementById('name').innerHTML = name;
 
+var ques = ['First Question! How old am I?','Second Question! Do I like pineapples on my pizza?','Third Question! How many countries do you think I have been to?','Fourth Question! Do I drive a motorcycle?','Fifth Question! Would you like to know more?'];
+
+var answer = ['24', 'NO', 'N', '45', 'YES', 'Y'];
+
+var resp = ['You are corrrect!', 'You are Wrong!'];
+
+
+
 function qOne() {
 // Question 1
- var age = prompt('First Question! How old am I?');
+ var age = prompt(ques[0]).toUpperCase();
  console.log('my age:', age);
 
- if (age === '24' || age === 'Twenty four') {
-     alert('You are correct');
+ if (age === answer[0]) {
+     alert(resp[0]);
      document.getElementById('one').innerHTML = 'Your Answer: ' + age;
      document.getElementById('one').style.color = 'green';
      count++;
  } else {
-    alert('Wrong! I am 24');
+    alert(resp[1] + ' I am 24');
      document.getElementById('one').innerHTML = 'Your Answer: ' + age;
      document.getElementById('one').style.color = 'red';
  }
@@ -27,16 +36,16 @@ qOne();
 
 function qTwo() {
 // Question 2
- var pizza = prompt('Second Question! Do I like pineapples on my pizza?').toUpperCase();
+ var pizza = prompt(ques[1]).toUpperCase();
     console.log('pizza:', pizza);
 
- if (pizza === 'NO' || pizza === 'N') {
-    alert('You are correct');
+ if (pizza === answer[1] || pizza === answer[2]) {
+    alert(resp[0]);
      document.getElementById('two').innerHTML = 'Your Answer: ' + pizza;
      document.getElementById('two').style.color = 'green';
      count++;
  } else {
-    alert('Wrong! That is gross');
+    alert(resp[1] + ' That is gross');
      document.getElementById('two').innerHTML = 'Your Answer: ' + pizza;
      document.getElementById('two').style.color = 'red';
  }
@@ -45,16 +54,16 @@ qTwo();
 
 function qThree() {
 // Question 3
- var countries = prompt('Third Question! How many countries do you think I have been to?');
+ var countries = prompt(ques[2]);
  console.log('number of countries:', countries);
 
- if (countries === '45') {
-    alert('You are correct');
+ if (countries === answer[3] ) {
+    alert(resp[0]);
     document.getElementById('three').innerHTML = 'Your Answer: ' + countries;
     document.getElementById('three').style.color = 'green';
     count++;
  } else {
-    alert('Wrong! I have been to 45 countries');
+    alert(resp[1] + ' I have been to 45 countries');
     document.getElementById('three').innerHTML = 'Your Answer: ' + countries;
     document.getElementById('three').style.color = 'red';
  }
@@ -63,16 +72,16 @@ qThree();
 
 function qFour() {
 // Question 4
- var moto = prompt('Fourth Question! Do I drive a motorcycle?').toUpperCase();
+ var moto = prompt(ques[3]).toUpperCase();
     console.log ('motorcycle', moto);
 
- if (moto === 'YES' || moto === 'Y') {
+ if (moto === answer[4] || moto === answer[5]) {
     alert('You are correct! His name is Dulahan');
      document.getElementById('four').innerHTML = 'Your Answer: ' + moto;
      document.getElementById('four').style.color = 'green';
      count++;
  } else {
-    alert('Wrong! I love my motorcycle');
+    alert(resp[1] + ' I love my motorcycle');
      document.getElementById('four').innerHTML = 'Your Answer: ' + moto;
      document.getElementById('four').style.color = 'red';
  }
@@ -81,10 +90,10 @@ qFour();
 
 function qFive() {
 // Question 5
- var last = prompt('Fifth Question! Would you like to know more?').toUpperCase();
+ var last = prompt(ques[4]).toUpperCase();
     console.log ('more', last);
 
- if (last === 'YES' || last === 'Y') {
+ if (last === answer[4] || last === answer[5]) {
     alert('Well then strap in!');
      document.getElementById('five').innerHTML = 'Your Answer: ' + last;
      document.getElementById('five').style.color = 'green';
