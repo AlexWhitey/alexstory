@@ -68,21 +68,27 @@ else if (countries === '45') {
      document.getElementById('five').style.color = 'red';
  }
 
+    var min=1; 
+    var max=10;  
+    var random =Math.floor(Math.random() * 10);
+
 for (var i = 0; i < 4 ; i++) {
     var x = parseInt(prompt('Guess a number between one and ten.'));
     console.log('number guessed', x);
-    if (x === 7) {
+    if (x === random) {
         alert('That is correct')
-        count++;
+        // count++;
         break;
     }
-    if (x > 7) {
+    if (x > random) {
         alert('Too high')
     }
-    if (x < 7) {
+    if (x < random) {
         alert('Too low')
     }
 }
+
+
 
 
 
