@@ -1,6 +1,8 @@
 'use strict';
 var count = 0;
 
+alert('Welcome to my page! Take a little quiz about me');
+
 var name = prompt('What is your name?');
 console.log('user name', name);
 document.getElementById('name').innerHTML = name;
