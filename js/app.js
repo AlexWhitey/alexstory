@@ -1,4 +1,5 @@
 'use strict';
+var count = 0;
 
 var name = prompt('What is your name?');
 console.log('user name', name);
@@ -10,6 +11,7 @@ document.getElementById('name').innerHTML = name;
  if (age === '24' || age === 'Twenty four') {
      document.getElementById('one').innerHTML = 'Thats correct!';
      document.getElementById('one').style.color = 'green';
+     count++;
  } else {
      document.getElementById('one').innerHTML = 'Thats wrong!';
      document.getElementById('one').style.color = 'red';
@@ -21,6 +23,7 @@ document.getElementById('name').innerHTML = name;
  if (pizza === 'NO' || pizza === 'N') {
      document.getElementById('two').innerHTML = 'Thats correct!';
      document.getElementById('two').style.color = 'green';
+     count++;
  } else {
      document.getElementById('two').innerHTML = 'Thats wrong!';
      document.getElementById('two').style.color = 'red';
@@ -35,6 +38,7 @@ if (parseInt(countries) >= 40 && parseInt(countries) < 45 || parseInt(countries)
 else if (countries === '45') {
     document.getElementById('three').innerHTML = 'Thats correct!';
     document.getElementById('three').style.color = 'green';
+    count++;
  } else {
     document.getElementById('three').innerHTML = 'Thats wrong!';
     document.getElementById('three').style.color = 'red';
@@ -46,18 +50,71 @@ else if (countries === '45') {
  if (moto === 'YES' || moto === 'Y') {
      document.getElementById('four').innerHTML = 'Thats correct!';
      document.getElementById('four').style.color = 'green';
+     count++;
  } else {
      document.getElementById('four').innerHTML = 'Thats wrong!';
      document.getElementById('four').style.color = 'red';
  }
 
- var last = prompt('Fifth Question! Is this the last question?').toUpperCase();
+ var last = prompt('Fifth Question! Would you like to know more?').toUpperCase();
     console.log ('last', last);
 
  if (last === 'YES' || last === 'Y') {
-     document.getElementById('five').innerHTML = 'It is!';
+     document.getElementById('five').innerHTML = 'Well then strap in!';
      document.getElementById('five').style.color = 'green';
+     count++;
  } else {
-     document.getElementById('five').innerHTML ='Sadly it is, but say hello if you want to know!';
+     document.getElementById('five').innerHTML ='Too bad! There is more anyway!';
      document.getElementById('five').style.color = 'red';
  }
+
+for (var i = 0; i < 4 ; i++) {
+    var x = parseInt(prompt('Guess a number between one and ten.'));
+    console.log('number guessed', x);
+    if (x === 7) {
+        alert('That is correct')
+        count++;
+        break;
+    }
+    if (x > 7) {
+        alert('Too high')
+    }
+    if (x < 7) {
+        alert('Too low')
+    }
+}
+
+
+
+var answ = ['apple', 'banana', 'pear', 'orange']
+
+for (var i = 6; i > 0 ; i--) {
+    var y = prompt('What kind of fruit do I like?').toLowerCase();
+    console.log('fruit guessed', y);
+
+    if (y === answ[0]) {
+        alert('That is correct! Here are all the fruits I like: apples, bananas, pears and oranges')
+        count++;
+        break;
+    }
+    if (y === answ[1]) {
+        alert('That is correct! Here are all the fruits I like: apples, bananas, pears and oranges')
+        count++;
+        break;
+    }
+    if (y === answ[2]) {
+        alert('That is correct! Here are all the fruits I like: apples, bananas, pears and oranges')
+        count++;
+        break;
+    }
+    if (y === answ[3]) {
+        alert('That is correct! Here are all the fruits I like: apples, bananas, pears and oranges')
+        count++;
+        break;
+    }
+    else {
+        alert('Keep trying! You have ' + i + ' attempts left!')
+    }
+}
+
+alert('You got ' + count + ' out of 7 correct!')
