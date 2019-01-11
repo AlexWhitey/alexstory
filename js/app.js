@@ -102,10 +102,12 @@ function qSix() {
     var min=1; 
     var max=10;  
     var random =Math.floor(Math.random() * 10);
+    console.log(random);
 
  for (var i = 4; i > 0 ; i--) {
     var x = parseInt(prompt('Guess a number between one and ten.'));
     console.log('number guessed', x);
+   
     if (x === random) {
         alert('That is correct')
         document.getElementById('six').innerHTML = 'Your answer: ' + x;
@@ -113,14 +115,17 @@ function qSix() {
          count++;
         break;
     }
-    if (x > random) {
+    else if (x > random) {
         alert('Too high')
     }
-    if (x < random) {
+     else if (x < random) {
         alert('Too low')
     }
+     else {
+       alert('Enter a number!!')
+    }
  }
-}
+ }
 qSix();
 
 function qSeven() {
@@ -134,7 +139,7 @@ function qSeven() {
  for (var c = 0; c < answ.length; c++){
  console.log('answers', answ[c]);
     if(y === answ[c]) {
-        alert('That is correct! Here are all the fruits I like: apples, bananas, pears and oranges');
+        alert('That is correct! I like: ' + answ[c]);
         document.getElementById('seven').innerHTML = 'Your answer: ' + y;
         document.getElementById('seven').style.color = 'green';
         count++;
